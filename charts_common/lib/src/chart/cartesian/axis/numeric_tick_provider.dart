@@ -92,6 +92,9 @@ class NumericTickProvider extends BaseTickProvider<num> {
   /// than zero value in data units if a data to axis unit converter is set.
   bool zeroBound = true;
 
+  num desiredMaxLimit;
+  num desiredMinLimit;
+
   /// If your data can only be in whole numbers, then set this to true.
   ///
   /// It should prevent the scale from choosing fractional ticks.  For example,
@@ -379,6 +382,14 @@ class NumericTickProvider extends BaseTickProvider<num> {
     if (zeroBound) {
       _low = _low > 0.0 ? 0.0 : _low;
       _high = _high < 0.0 ? 0.0 : _high;
+    }
+
+    if (desiredMinLimit != null) {
+      _low = desiredMinLimit;
+    }
+
+    if (desiredMaxLimit != null) {
+      _high = desiredMinLimit;
     }
 
     // Correct cases where high and low equal to give the tick provider an

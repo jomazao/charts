@@ -116,6 +116,8 @@ class BasicNumericTickProviderSpec implements NumericTickProviderSpec {
   final int desiredTickCount;
   final int desiredMinTickCount;
   final int desiredMaxTickCount;
+  final num desiredMaxLimit;
+  final num desiredMinLimit;
 
   /// Creates a [TickProviderSpec] that dynamically chooses the number of
   /// ticks based on the extents of the data.
@@ -137,7 +139,9 @@ class BasicNumericTickProviderSpec implements NumericTickProviderSpec {
       this.dataIsInWholeNumbers,
       this.desiredTickCount,
       this.desiredMinTickCount,
-      this.desiredMaxTickCount});
+      this.desiredMaxTickCount,
+      this.desiredMinLimit,
+      this.desiredMaxLimit});
 
   @override
   NumericTickProvider createTickProvider(ChartContext context) {
@@ -145,6 +149,15 @@ class BasicNumericTickProviderSpec implements NumericTickProviderSpec {
     if (zeroBound != null) {
       provider.zeroBound = zeroBound;
     }
+
+    if (desiredMinLimit != null) {
+      provider.desiredMinLimit = desiredMinLimit;
+    }
+
+    if (desiredMaxLimit != null) {
+      provider.desiredMaxLimit = desiredMaxLimit;
+    }
+
     if (dataIsInWholeNumbers != null) {
       provider.dataIsInWholeNumbers = dataIsInWholeNumbers;
     }
