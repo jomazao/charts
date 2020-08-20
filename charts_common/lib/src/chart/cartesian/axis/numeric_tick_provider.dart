@@ -389,7 +389,7 @@ class NumericTickProvider extends BaseTickProvider<num> {
     }
 
     if (desiredMaxLimit != null) {
-      _high = desiredMinLimit;
+      _high = desiredMaxLimit;
     }
 
     // Correct cases where high and low equal to give the tick provider an
