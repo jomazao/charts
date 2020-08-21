@@ -25,7 +25,7 @@ import 'layout_view.dart' show LayoutView, LayoutPosition;
 /// Default Layout manager for [LayoutView]s.
 class LayoutManagerImpl implements LayoutManager {
   static const _minDrawWidth = 20;
-  static const _minDrawHeight = 200;
+  static const _minDrawHeight = 20;
 
   // Allow [Layoutconfig] to be mutable so it can be modified without requiring
   // a new copy of [DefaultLayoutManager] to be created.
