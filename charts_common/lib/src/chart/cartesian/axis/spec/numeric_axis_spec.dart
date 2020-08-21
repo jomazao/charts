@@ -178,7 +178,9 @@ class BasicNumericTickProviderSpec implements NumericTickProviderSpec {
       dataIsInWholeNumbers == other.dataIsInWholeNumbers &&
       desiredTickCount == other.desiredTickCount &&
       desiredMinTickCount == other.desiredMinTickCount &&
-      desiredMaxTickCount == other.desiredMaxTickCount;
+      desiredMaxTickCount == other.desiredMaxTickCount &&
+      desiredMinLimit == other.desiredMinLimit &&
+      desiredMaxLimit == other.desiredMaxLimit;
 
   @override
   int get hashCode {
@@ -187,6 +189,8 @@ class BasicNumericTickProviderSpec implements NumericTickProviderSpec {
     hashcode = (hashcode * 37) + desiredTickCount?.hashCode ?? 0;
     hashcode = (hashcode * 37) + desiredMinTickCount?.hashCode ?? 0;
     hashcode = (hashcode * 37) + desiredMaxTickCount?.hashCode ?? 0;
+    hashcode = (hashcode * 37) + desiredMinLimit?.hashCode ?? 0;
+    hashcode = (hashcode * 37) + desiredMaxLimit?.hashCode ?? 0;
     return hashcode;
   }
 }
